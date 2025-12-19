@@ -2,7 +2,7 @@ def get_mask_card_number(numbers: str) -> str:
     """Функция которая маскирует номер карты"""
     code = []
     for i in range(0, len(numbers), 4):
-        if numbers.isdigit() == False:
+        if numbers.isdigit() is False:
             return "ошибка ввода"
         elif len(numbers) != 16:
             return "неверный номер"
@@ -19,7 +19,7 @@ def get_mask_card_number(numbers: str) -> str:
 def get_mask_account(row: str) -> str:
     """Функция которая маскирует номер счета"""
     for i in range(0, len(row)):
-        if row.isdigit() == False:
+        if row.isdigit() is False:
             return "ошибка ввода"
         elif len(row) != 16:
             return "неверный номер"

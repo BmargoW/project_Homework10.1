@@ -1,10 +1,10 @@
 def mask_account_card(accaunt_number: str) -> str:
     """функция, возвращает тип, но маскирует номер данных"""
 
-    if accaunt_number.isdigit() == True:
+    if accaunt_number.isdigit() is True:
         return "введите тип карты или 'счет'"
 
-    elif accaunt_number.isalpha() == True:
+    elif accaunt_number.isalpha() is True:
         return "введите номер"
 
     text = accaunt_number.split()
