@@ -1,4 +1,4 @@
-def filter_by_state(roster: list[dict], status: str = "CANCELED") -> list[dict]:
+def filter_by_state(roster: list[dict], status: str = "EXECUTED") -> list[dict]:
     """функция, которая фильтрует список по заданному значению и возвращает
     список словарей, имеющих заданное значение"""
 
