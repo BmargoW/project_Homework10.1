@@ -1,5 +1,7 @@
 def get_mask_card_number(numbers: str) -> str:
-    """Функция которая маскирует номер карты"""
+    """Функция которая маскирует номер карты
+    :rtype: str
+    """
     code = []
     for i in range(0, len(numbers), 4):
         if numbers.isdigit() is False:
@@ -11,8 +13,6 @@ def get_mask_card_number(numbers: str) -> str:
             code.append(numi)
             mask = " ".join(code)
             maske = f"{mask[0:7]}** **** {mask[-4:]}"
-        else:
-            return "введите номер"
     return maske
 
 
