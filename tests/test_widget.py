@@ -17,5 +17,5 @@ def test_mask_account_card() -> None:
         ("2020-09-17T02:26:18.67", "17.09.2020"),
     ],
 )
-def test_get_date(value:str, expected:str)-> None:
+def test_get_date(value: str, expected: str) -> None:
     assert get_date(value) == expected

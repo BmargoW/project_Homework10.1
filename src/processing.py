@@ -1,6 +1,7 @@
 def filter_by_state(roster: list[dict], status: str = "EXECUTED") -> list[dict]:
     """функция, которая фильтрует список по заданному значению и возвращает
-    список словарей, имеющих заданное значение"""
+    список словарей, имеющих заданное значение
+    :rtype: list[dict]"""
 
     approved = []
     for element in roster:
