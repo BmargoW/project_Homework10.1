@@ -26,6 +26,4 @@ def get_mask_account(row: str) -> str:
         elif len(row) == 16:
             numb = row[-4:]
             mask = f"**{numb}"
-        else:
-            return "введите номер"
     return mask
