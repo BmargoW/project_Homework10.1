@@ -1,4 +1,5 @@
-usd_transactions = filter(lambda x: x["operationAmount"]["currency"]["code"] == "USD" , list)
+def filter_by_currency(my_list,b):
+    return filter(lambda x: x["operationAmount"]["currency"]["code"] == b , my_list)
 
 
 def transaction_descriptions(my_list):
