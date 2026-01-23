@@ -21,7 +21,7 @@ def mask_account_card(accaunt_number: str) -> str:
     for i in range(0, len(issue), 4):
         if len(issue) >= 16:
             if len(issue) == 16:
-                character = issue[i : i + 4]
+                character = issue[i:i + 4]
                 code.append(character)
                 mask = " ".join(code)
                 maske = f"{mask[0:7]}** **** {mask[-4:]}"
