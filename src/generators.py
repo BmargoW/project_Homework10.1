@@ -1,5 +1,5 @@
-def filter_by_currency(my_list,b):
-    return filter(lambda x: x["operationAmount"]["currency"]["code"] == b , my_list)
+def filter_by_currency(my_list: object, b: object) -> filter:
+    return filter(lambda x: x["operationAmount"]["currency"]["code"] == b, my_list)
 
 
 def transaction_descriptions(my_list):
@@ -7,11 +7,8 @@ def transaction_descriptions(my_list):
         yield f"{person["description"]}"
 
 
-def card_number_generator(start,stop):
+def card_number_generator(start, stop):
     for i in range(start, stop):
-        number_1= str('{:016d}'.format(i))
+        number_1 = str("{:016d}".format(i))
         split_number = " ".join([number_1[0:4], number_1[4:8], number_1[8:12], number_1[12:]])
         yield split_number
-
-
-
