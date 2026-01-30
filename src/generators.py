@@ -7,7 +7,7 @@ def transaction_descriptions(my_list):
     """функция, которая принимает список словарей с транзакциями
     и возвращает описание каждой операции по очереди"""
     for person in my_list:
-        yield f"{person["description"]}"
+        yield f"{person['description']}"
 
 
 def card_number_generator(start, stop):
