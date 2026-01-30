@@ -1,8 +1,11 @@
 def log(filename=None):
+    """декоратор логирует детали выполнения функций, передавая информацию в консоль
+    либо в файл, если в Декоратор передан аргумент с именем данного файла"""
+
     def abbreviated_text(func):
         def wrapper(*args, **kwargs):
             try:
-                result = func(*args, **kwargs)
+                result = func(*args, **kwargs)  # Выполнение функции
                 log_message = "my_function ok"
             except Exception as e:
                 result = None
@@ -11,10 +14,10 @@ def log(filename=None):
             if filename is None:
                 print(log_message)
             else:
-                with open(filename, 'a') as file:
-                    file.write(log_message + '\n')
+                with open(filename, "a") as file:
+                    file.write(log_message + "\n")
 
-            return result
+            return result  # Возврат результата или None при ошибке
 
         return wrapper
 
