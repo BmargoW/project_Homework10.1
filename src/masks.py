@@ -9,7 +9,7 @@ def get_mask_card_number(numbers: str) -> str:
         elif len(numbers) != 16:
             return "неверный номер"
         elif len(numbers) == 16:
-            numi = numbers[i : i + 4]
+            numi = numbers[i:i + 4]
             code.append(numi)
             mask = " ".join(code)
             maske = f"{mask[0:7]}** **** {mask[-4:]}"
