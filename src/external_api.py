@@ -9,7 +9,7 @@ t = {
     "id": 441945886,
     "state": "EXECUTED",
     "date": "2019-08-26T10:50:58.294041",
-    "operationAmount": {"amount": "2000.00", "currency": {"name": "USD", "code": "USD"}},
+    "operationAmount": {"amount": "1.00", "currency": {"name": "USD", "code": "USD"}},
 }
 
 
@@ -37,7 +37,7 @@ def report_operation(action):
 
         # status_code = response.status_code
         resultet = dict(response.json())
-        d = resultet["result"]
+        d = float(resultet["result"])
 
         return d
 

@@ -10,3 +10,6 @@ def uploading_content(name_file):
         except json.JSONDecodeError:
             print("invalid JSON data")
             return []
+        except json.FileNotFoundError:
+            print("invalid JSON data")
+            return ["File not found"]
