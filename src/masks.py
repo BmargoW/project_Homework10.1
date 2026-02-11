@@ -25,7 +25,7 @@ def get_mask_card_number(numbers: str) -> str:
             code.append(numi)
             mask = " ".join(code)
             maske = f"{mask[0:7]}** **** {mask[-4:]}"
-            logger.info("the card number is being masked")
+            logger.info("the card number is being mask")
     return maske
 
 
