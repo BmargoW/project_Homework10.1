@@ -4,7 +4,7 @@ import csv
 
 
 def reading_files_csv(name_file):
-    """функция, которая считывает финансовые операции из файла-CSV
+    """Функция, которая считывает финансовые операции из файла-CSV
     и возвращает список словарей с транзакциями"""
     with open(name_file) as file:
         transaction = csv.DictReader(file)
