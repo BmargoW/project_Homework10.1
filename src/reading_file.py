@@ -4,14 +4,15 @@ import csv
 
 
 def reading_files_csv(name_file):
-    """Функция, которая считывает финансовые операции из файла-CSV
+    """Функция, которая считывает  финансовые операции из файла - csv
     и возвращает список словарей с транзакциями"""
-    with open(name_file) as file:
-        transaction = csv.DictReader(file)
-        rows = []
-        for row in transaction:
-            rows.append(row)
-        return rows
+    data = []
+    with open(name_file, encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        for row in reader:
+            data.append(row)
+
+    return data
 
 
 print(reading_files_csv("../transactions.csv"))
