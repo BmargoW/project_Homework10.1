@@ -6,15 +6,13 @@ import csv
 def reading_files_csv(name_file):
     """функция, которая считывает финансовые операции из файла-CSV
     и возвращает список словарей с транзакциями"""
-    with open(name_file) as file:
-        transaction = csv.DictReader(file)
-        rows = []
-        for row in transaction:
-            rows.append(row)
-        return rows
+    data = []
+    with open(name_file, encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        for row in reader:
+            data.append(row)
 
-
-print(reading_files_csv("../transactions.csv"))
+    return data
 
 
 def reading_files_exel(name_f):
@@ -25,5 +23,6 @@ def reading_files_exel(name_f):
 
     return res
 
-
-print(reading_files_exel("../transactions_excel.xlsx"))
+if __name__== "__main__":
+    print(reading_files_exel("../transactions_excel.xlsx"))
+    print(reading_files_csv("../transactions.csv"))
