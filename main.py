@@ -1,8 +1,10 @@
-from pycodestyle import continued_indentation
+
 
 from src.reading_file import reading_files_csv, reading_files_exel
 from src.utils import uploading_content
 from src.processing import filter_by_state, sort_by_date
+from src.generators import filter_by_currency
+from src.banking_research import
 
 def main():
 
@@ -57,10 +59,24 @@ def main():
             return roster
 
 
+    def user_operation(action):
+        u_o = input("Выводить только рублевые транзакции?ДА/НЕТ: ").strip().upper()
+        if u_o == "ДА":
+            return list(filter_by_currency(action, "RUB"))
+        elif u_o == "НЕТ":
+            print("ok")
+            return action
+        return None
+
+    def user_filter()
+
+
     result = user_selection()
     result_2 = user_status(result)
     result_3 = user_data(result_2)
-    print(result_3)
+    result_4 = user_operation(result_3)
+    result_5 = user_filter(result_4)
+    print(result_5)
 
 
 if __name__ == "__main__":
