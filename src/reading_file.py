@@ -4,15 +4,15 @@ import csv
 
 
 def reading_files_csv(name_file):
-    """функция, которая считывает финансовые операции из файла-CSV
+    """Функция, которая считывает  финансовые операции из файла - csv
     и возвращает список словарей с транзакциями"""
     data = []
     with open(name_file, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter=";")
         for row in reader:
             data.append(row)
-
     return data
+
 
 
 def reading_files_exel(name_f):
