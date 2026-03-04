@@ -3,8 +3,7 @@
 from src.reading_file import reading_files_csv, reading_files_exel
 from src.utils import uploading_content
 from src.processing import filter_by_state, sort_by_date
-from src.generators import filter_by_currency
-from src.banking_research import
+from src.banking_research import process_bank_search
 
 def main():
 
@@ -62,21 +61,32 @@ def main():
     def user_operation(action):
         u_o = input("Выводить только рублевые транзакции?ДА/НЕТ: ").strip().upper()
         if u_o == "ДА":
-            return list(filter_by_currency(action, "RUB"))
+            new_filter = "RUB"
+            filtered = [d for d in action if new_filter in d.values()]
+            return list(filtered)
         elif u_o == "НЕТ":
             print("ok")
             return action
         return None
 
-    def user_filter()
-
+    def user_filter(data):
+        u_f = input("""Отфильтровать список транзакций по определенному слову 
+                      в описании? Да/Нет:""").strip().upper()
+        if u_f == "ДА":
+            my_filter = input("""введите строку поиска для фильтрации""")
+            return process_bank_search(data, my_filter)
+        elif u_f == "НЕТ":
+            print("ok")
+            return data
+        return None
 
     result = user_selection()
     result_2 = user_status(result)
     result_3 = user_data(result_2)
     result_4 = user_operation(result_3)
     result_5 = user_filter(result_4)
-    print(result_5)
+    print("Программа: Распечатываю итоговый список транзакций...")
+    print(f"Всего банковских операций в выборке: {len(result_5)}, {result_5}")
 
 
 if __name__ == "__main__":
