@@ -12,7 +12,7 @@ import json
 
 def uploading_content(name_file):
     """функция из JSON-файла возвращает список словарей с данными о финансовых транзакциях."""
-    with open(name_file, encoding='utf-8') as json_file:
+    with open(name_file, encoding="utf-8") as json_file:
         try:
             data = json.load(json_file)
             # logger.info("valid data was received from the file")

@@ -5,13 +5,13 @@ from collections import Counter
 def process_bank_search(data: list[dict], search: str) -> list[dict]:
     """функция, которая принимает список словарей с данными о банковских операциях и строку поиска,
     а возвращает список словарей, у которых в описании есть данная строка"""
-    my_dict = []
+
+    result = []
+    pattern = re.compile(search)
     for element in data:
-        if re.fullmatch(search, element["description"]):
-            my_dict.append(element)
-        else:
-            pass
-    return my_dict
+        if pattern.search(element.get("description", "")):
+            result.append(element)
+    return result
 
 
 def process_bank_operations(data: list[dict], categories: list) -> dict:

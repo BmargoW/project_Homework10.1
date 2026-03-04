@@ -1,4 +1,3 @@
-
 import pytest
 from src.banking_research import process_bank_search, process_bank_operations
 

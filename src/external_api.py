@@ -42,4 +42,5 @@ def report_operation(action):
         return d
 
 
-print(report_operation(t))
+if __name__ == "__main__":
+    print(report_operation(t))

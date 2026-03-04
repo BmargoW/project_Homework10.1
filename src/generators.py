@@ -1,5 +1,6 @@
 def filter_by_currency(my_list, b):
     """функция, которая принимает на вход список словарей, представляющих транзакции."""
+
     return filter(lambda x: x["operationAmount"]["currency"]["code"] == b, my_list)
 
 

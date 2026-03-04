@@ -23,6 +23,7 @@ def reading_files_exel(name_f):
 
     return res
 
-if __name__== "__main__":
+
+if __name__ == "__main__":
     print(reading_files_exel("../transactions_excel.xlsx"))
     print(reading_files_csv("../transactions.csv"))
