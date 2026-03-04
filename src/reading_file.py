@@ -11,11 +11,8 @@ def reading_files_csv(name_file):
         reader = csv.DictReader(f, delimiter=";")
         for row in reader:
             data.append(row)
-
     return data
 
-
-print(reading_files_csv("../transactions.csv"))
 
 
 def reading_files_exel(name_f):
@@ -27,4 +24,6 @@ def reading_files_exel(name_f):
     return res
 
 
-print(reading_files_exel("../transactions_excel.xlsx"))
+if __name__ == "__main__":
+    print(reading_files_exel("../transactions_excel.xlsx"))
+    print(reading_files_csv("../transactions.csv"))

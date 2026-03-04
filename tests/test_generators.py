@@ -38,7 +38,8 @@ def test_filter_by_currency(my_list_transaction, currency):
             "description": "Перевод с карты на карту",
             "from": "Visa Classic 6831982476737658",
             "to": "Visa Platinum 8990922113665229",
-        })
+        }
+    )
 
 
 def test_filter_by_currency_empty_list():
